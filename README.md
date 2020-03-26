@@ -33,10 +33,11 @@ module "jenkins" {
 | cidr | The CIDR block for the VPC which will be created if `vpc_id` is not specified | `string` | `""` | no |
 | delimiter | Delimiter to be used between `namespace`, `environment`, `stage`, `name` and `attributes` | `string` | `"-"` | no |
 | environment | Environment, e.g. 'prod', 'staging', 'dev', 'pre-prod', 'UAT' | `string` | `""` | no |
-| ip\_whitelist | IP list will be able to access Jenkins | `list` | <code>["0.0.0.0/0"<br>]<br></code> | no |
+| ip\_whitelist | IP list will be able to access Jenkins | `list` | <code>["0.0.0.0/0"]</code> | no |
 | jekins\_volume\_size | EC2 root volume size | `string` | `20` | no |
-| jenkins\_ami\_id | Jenkins AMI ID. It's recommended to use https://github.com/DevopsCare/packer-jenkins-ami for AMI building | `string` | `""` | no |
+| jenkins\_ami\_id | Jenkins AMI id. It's recommended to use https://github.com/DevopsCare/packer-jenkins-ami for AMI building | `string` | `""` | no |
 | jenkins\_domain\_name | Domain will be used for ACM module | `string` | `""` | no |
+| jenkins\_iam\_instance\_profile | The IAM Instance Profile to launch the instance with. Specified as the name of the Instance Profile | `string` | `""` | no |
 | jenkins\_instance\_type | The type of instance to start | `string` | `"t3.medium"` | no |
 | keypair\_name | Key pair will be used for EC2 instance | `string` | `""` | no |
 | name | Solution name, e.g. 'app' or 'jenkins' | `string` | `""` | no |

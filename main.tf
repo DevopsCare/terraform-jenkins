@@ -180,5 +180,7 @@ module "jenkins_ec2" {
   vpc_security_group_ids = [module.jenkins_sg.this_security_group_id]
   subnet_id              = module.vpc.private_subnets[0]
 
+  iam_instance_profile = var.jenkins_iam_instance_profile
+
   tags = module.label.tags
 }
