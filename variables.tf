@@ -128,6 +128,12 @@ variable "keypair_name" {
   default     = ""
 }
 
+variable "jenkins_iam_instance_profile" {
+  description = "The IAM Instance Profile to launch the instance with. Specified as the name of the Instance Profile"
+  type        = string
+  default     = ""
+}
+
 #######
 # ACM #
 #######
