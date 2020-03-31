@@ -6,7 +6,6 @@
 module "jenkins" {
   source = "git::https://github.com/DevopsCare/terraform-jenkins.git?ref=master"
 
-  source      = "../"
   name        = "jenkins"
   environment = "dev"
   azs         = ["us-east-1a"]
