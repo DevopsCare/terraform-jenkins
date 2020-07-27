@@ -55,7 +55,7 @@ module "jenkins_elb_sg" {
 
   name        = module.label.id
   description = "Security group for Jenkins"
-  vpc_id      = module.vpc.vpc_id
+  vpc_id      = local.vpc_id
 
   ingress_cidr_blocks = var.ip_whitelist
 
@@ -146,7 +146,7 @@ module "jenkins_sg" {
 
   name        = module.label.id
   description = "Security group for Jenkins"
-  vpc_id      = module.vpc.vpc_id
+  vpc_id      = local.vpc_id
 
   computed_ingress_with_source_security_group_id = [
     {
@@ -178,7 +178,7 @@ module "jenkins_ec2" {
   key_name               = var.keypair_name
   monitoring             = true
   vpc_security_group_ids = [module.jenkins_sg.this_security_group_id]
-  subnet_id              = module.vpc.private_subnets[0]
+  subnet_id              = local.private_subnet_ids
 
   iam_instance_profile = var.jenkins_iam_instance_profile
 
