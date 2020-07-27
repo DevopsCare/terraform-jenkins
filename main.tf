@@ -79,7 +79,7 @@ module "jenkins_elb" {
 
   name = module.label.id
 
-  subnets         = module.vpc.public_subnets
+  subnets         = local.public_subnet_ids
   security_groups = [module.jenkins_elb_sg.this_security_group_id]
   internal        = false
 
