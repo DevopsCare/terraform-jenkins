@@ -178,7 +178,7 @@ module "jenkins_ec2" {
   key_name               = var.keypair_name
   monitoring             = true
   vpc_security_group_ids = [module.jenkins_sg.this_security_group_id]
-  subnet_id              = local.private_subnet_ids
+  subnet_ids             = local.private_subnet_ids
 
   iam_instance_profile = var.jenkins_iam_instance_profile
 
